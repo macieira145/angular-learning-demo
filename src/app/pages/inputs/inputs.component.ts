@@ -15,9 +15,8 @@ export class InputsComponent {
 
   onSubmit(form: FormGroup) {
     if (form.valid) {
-      console.log("THIS IS A VALID FORM")
     } else {
-      throw new Error("GANDA FALHA OH MANINHO")
+      throw new Error('GANDA FALHA OH MANINHO');
     }
   }
 
