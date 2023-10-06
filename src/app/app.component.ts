@@ -7,6 +7,7 @@ import {
 import { ThemeManagerService } from './shared/services/theme-manager/theme-manager.service';
 import { ITheme } from './shared/interfaces/theme.interface';
 import { ThemeManager } from './shared/classes/theme-manager';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private appService: AppService,
-    private themeManagerService: ThemeManagerService
+    private themeManagerService: ThemeManagerService,
+    private route: Router
   ) {
     this.activeTheme = this.themeManagerService.getTheme();
     if (this.activeTheme === null)
@@ -29,6 +31,8 @@ export class AppComponent implements OnInit {
     this.themeManagerService.loadTheme().subscribe((newTheme) => {
       this.activeTheme = newTheme as ITheme;
     });
+
+    this.route.navigate(['demo']);
   }
 
   public changeTheme() {

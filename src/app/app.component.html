@@ -1,6 +1,3 @@
-<button (click)="changeTheme()">SET THEME</button>
-<section class="flex h-full w-full" [ngClass]="isDarkThemeEnabled() ? 'dark' : ''">
-    <div class="h-full w-full bg:white dark:bg-black">
-        <router-outlet></router-outlet>
-    </div>
+<section id="app-content" class="h-full w-full" [ngClass]="isDarkThemeEnabled() ? 'dark' : ''">
+    <router-outlet></router-outlet>
 </section>
